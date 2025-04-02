@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+body{
+    font-family: 'Libre Baskerville', serif;
+    background-color: #0e0e0e;
+    color: whitesmoke;
+}
+
+h1{
+    font-size: 4rem;
+}
+p{
+    font-size: 2rem;
+}
+
+img{
+    border: solid 5px white;
+    width: 100%;
+}
+
+div{
+    margin-top: 80px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+
+h1,p{
+    text-align: center;
+}
