@@ -8,6 +8,8 @@
 //   alert("I gor clicked!")
 // }
 
+
+//DETECTA CLICK POR BOTOES, COM O MOUSE 
 let numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
 for(let i = 0; i < numberOfDrumButtons; i++){
@@ -15,6 +17,18 @@ for(let i = 0; i < numberOfDrumButtons; i++){
 
     let buttonInnerHTML = this.buttonInnerHTML;
 
+    makeSound(buttonInnerHTML)
+});
+
+
+//DETECTA CLICKS DE TECLAS
+document.addEventListener("keydown", function(event){
+    makeSound(event.key);
+});
+
+
+
+function makeSound(key) {
     switch (buttonInnerHTML){
         case "w":
             let tom1 = new Audio("sounds/tom-1.mp3");
@@ -45,10 +59,8 @@ for(let i = 0; i < numberOfDrumButtons; i++){
             snare.play();
         break;
         default:
+            console.log(key)
         break;
     }     
-    })
+    }
 }
-
-let audio = new Audio("sounds/crash.mp3");
-        audio.play();
