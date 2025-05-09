@@ -15,21 +15,23 @@ let numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for(let i = 0; i < numberOfDrumButtons; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
 
-    let buttonInnerHTML = this.buttonInnerHTML;
+    let buttonInnerHTML = this.innerHTML;
 
     makeSound(buttonInnerHTML)
+    buttonAniamtion(buttonInnerHTML)
 });
-
+}
 
 //DETECTA CLICKS DE TECLAS
 document.addEventListener("keydown", function(event){
     makeSound(event.key);
+    buttonAniamtion(event.key);
 });
 
 
 
 function makeSound(key) {
-    switch (buttonInnerHTML){
+    switch (key){
         case "w":
             let tom1 = new Audio("sounds/tom-1.mp3");
             tom1.play();
@@ -62,5 +64,13 @@ function makeSound(key) {
             console.log(key)
         break;
     }     
-    }
+}
+
+function buttonAniamtion(currentKey){
+    let activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 300)
 }
