@@ -19,4 +19,4 @@ function Garcom (name, age, foods){
 //Objeto criado a partir de um construtor
 var garcom1 = new Garcom("Diego", 20, "Pizza");
 
-garcom1.ask
+garcom1.ask();
